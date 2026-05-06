@@ -1,4 +1,4 @@
-# TypeScript Assignment
+# TypeScript
 
 A collection of basic TypeScript problem solutions with key concept highlights.
 
