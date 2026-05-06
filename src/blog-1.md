@@ -13,7 +13,7 @@ TypeScript শিখতে গেলে সবচেয়ে গুরুত্ব
 
 
 ### সমস্যা উদাহরণ:
-
+```
 let data: any;
 
 data = "Hello";
@@ -24,3 +24,4 @@ console.log(data.toUpperCase());
 // কিন্তু যদি ভুল হয়?
 data = 123;
 console.log(data.toUpperCase()); // runtime error!
+```
