@@ -13,7 +13,7 @@ TypeScript শিখতে গেলে সবচেয়ে গুরুত্ব
 
 
 ### সমস্যা উদাহরণ:
-```
+```ts
 let data: any;
 
 data = "Hello";
