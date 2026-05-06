@@ -144,6 +144,25 @@ function example(x: string | number) {
 | Type checking | নেই | আছে |
 | Safety | unsafe | safe |
 | Runtime error risk | high | low |
-| Use case | avoid | recommended |
 
 ---
+
+## 🚀 বাস্তব রুলস (Best Practice)
+
+✔ `any` avoid করো যতটা সম্ভব
+✔ external API / user input → `unknown` ব্যবহার করো
+✔ সবসময় type narrowing ব্যবহার করো
+✔ TypeScript কে “strict mode” এ রাখো
+
+---
+
+## 🎯 Final Summary
+
+- `any` TypeScript-এর safety system বন্ধ করে দেয় → তাই এটাকে “type safety hole” বলা হয়
+- `unknown` নিরাপদ কারণ এটি বাধ্য করে আগে type check করতে
+- Type narrowing হলো runtime checks ব্যবহার করে type কে নির্দিষ্ট করা
+
+---
+
+মনে রাখতে হবে:
+> ভালো TypeScript developer মানে হলো — যিনি `any` কম ব্যবহার করেন এবং type narrowing বেশি ব্যবহার করেন
