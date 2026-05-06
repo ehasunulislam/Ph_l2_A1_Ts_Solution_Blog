@@ -17,3 +17,20 @@ function reverseString(str : string) {
 
 const result2 = reverseString("typescript");
 // console.log(result2);
+
+
+
+// question solved - 3
+type StringOrNumber = string | number;
+
+function checkType(value: StringOrNumber) {
+    if(typeof value === "string") {
+        return "String"
+    } else if(typeof value === "number") {
+        return "Number"
+    }
+}
+
+const result3 = checkType("Hello");
+const result4 = checkType(42);
+// console.log(result4);
