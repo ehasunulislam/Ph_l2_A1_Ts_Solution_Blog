@@ -34,3 +34,37 @@ function checkType(value: StringOrNumber) {
 const result3 = checkType("Hello");
 const result4 = checkType(42);
 // console.log(result4);
+
+
+
+// question solved - 4
+function getProperty <T, k extends keyof T>(object: T, key: k) {
+    return object[key];
+}
+
+const user = { id: 1, name: "John Doe", age: 21 };
+const result5 = getProperty(user, "name");
+
+// console.log(result5);
+
+
+
+// question solved - 5
+interface Book {
+    title: string,
+    author: string
+    publishedYear: number,
+}
+
+function toggleReadStatus(book: Book): Book & {isRead: boolean} {
+    return {
+        ...book,
+        isRead: true
+    }
+}
+
+const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
+const result6 = toggleReadStatus(myBook);
+
+console.log(result6);
+
