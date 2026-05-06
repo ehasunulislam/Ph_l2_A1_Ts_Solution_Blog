@@ -25,3 +25,27 @@ console.log(data.toUpperCase());
 data = 123;
 console.log(data.toUpperCase()); // runtime error!
 ```
+
+
+### সমস্যা কী?
+- TypeScript কোনো error ধরতে পারে না
+- ভুল টাইপ runtime এ গিয়ে crash করতে পারে
+
+তাই `any` কে বলা হয় **Type Safety Hole** — কারণ এটি টাইপ সিস্টেমকে ভেঙে দেয়।
+
+
+---
+
+## কেন `unknown` বেশি নিরাপদ?
+
+`unknown` মানে হলো: *“আমি জানি না এই ডেটার টাইপ কী, তাই তুমি আগে যাচাই করো”*
+
+### উদাহরণ:
+```ts
+let data: unknown;
+
+data = "Hello";
+
+// সরাসরি ব্যবহার করা যাবে না
+// console.log(data.toUpperCase()); ❌ ERROR
+```
