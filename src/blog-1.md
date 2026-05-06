@@ -1,3 +1,26 @@
 # TypeScript এ `any`, `unknown` এবং Type Narrowing — সহজ ব্যাখ্যা
 
 TypeScript শিখতে গেলে সবচেয়ে গুরুত্বপূর্ণ বিষয়গুলোর একটি হলো type safety। অনেকেই `any` ব্যবহার করে দ্রুত কাজ শেষ করে ফেলে, কিন্তু এটি আসলে TypeScript-এর শক্তিশালী টাইপ সিস্টেমকে দুর্বল করে দেয়। অন্যদিকে `unknown` ব্যবহার করলে কোড আরও নিরাপদ হয়। এই আর্টিকেলে আমরা বুঝবো কেন `any` কে “type safety hole” বলা হয়, কেন `unknown` বেশি নিরাপদ, এবং **type narrowing** কীভাবে কাজ করে।
+
+
+---
+
+##  কেন `any` কে “Type Safety Hole” বলা হয়?
+
+`any` মানে হলো TypeScript কে বলা: *“এই ভেরিয়েবল নিয়ে তুমি আর কিছু যাচাই করো না”*।
+
+এর ফলে TypeScript-এর সব safety check বন্ধ হয়ে যায়।
+
+
+### সমস্যা উদাহরণ:
+
+let data: any;
+
+data = "Hello";
+
+// TypeScript এখানে কোনো error দিবে না
+console.log(data.toUpperCase());
+
+// কিন্তু যদি ভুল হয়?
+data = 123;
+console.log(data.toUpperCase()); // runtime error!
