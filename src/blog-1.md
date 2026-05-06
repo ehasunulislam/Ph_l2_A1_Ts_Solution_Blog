@@ -49,3 +49,32 @@ data = "Hello";
 // সরাসরি ব্যবহার করা যাবে না
 // console.log(data.toUpperCase()); ❌ ERROR
 ```
+
+### সঠিক ব্যবহার (Type Checking দরকার):
+```ts
+let data: unknown;
+
+data = "Hello";
+
+if (typeof data === "string") {
+  console.log(data.toUpperCase()); // safe
+}
+```
+
+### কেন এটি ভালো?
+- Compile-time error দেয় 
+- ভুল আগে ধরতে পারে
+- Developer কে বাধ্য করে check করতে
+
+তাই `unknown` = **safe by default**
+
+---
+
+## Type Narrowing কী?
+
+**Type Narrowing** হলো এমন একটি প্রক্রিয়া যেখানে TypeScript কোনো ভেরিয়েবলের টাইপকে ধীরে ধীরে **specific (নির্দিষ্ট)** করে ফেলে runtime check এর মাধ্যমে।
+
+সহজভাবে:
+> আগে টাইপ বড় ছিল → পরে condition দিয়ে ছোট/নির্দিষ্ট টাইপে নামানো হয়
+
+---
