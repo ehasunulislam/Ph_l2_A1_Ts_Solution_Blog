@@ -67,4 +67,3 @@ const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2
 const result6 = toggleReadStatus(myBook);
 
 console.log(result6);
-
