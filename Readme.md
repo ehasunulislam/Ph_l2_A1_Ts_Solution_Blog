@@ -17,5 +17,5 @@ A collection of basic TypeScript problem solutions with key concept highlights.
 
 ## Aticle Overview
 
--- which is better in TypeScript bettewen any and unknown
--- The main 4 pillars in OOP (Inheritance, Polymorphism, Abstraction, and Encapsulation)
+- which is better in TypeScript bettewen any and unknown
+- The main 4 pillars in OOP (Inheritance, Polymorphism, Abstraction, and Encapsulation)
