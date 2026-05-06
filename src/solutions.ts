@@ -102,4 +102,13 @@ const result7 = student.getDetails();
 
 
 
+// question solved - 7
+function getIntersection(arr1: number[], arr2: number[]) {
+    return(arr1.filter((num) => {
+      return arr2.includes(num)
+    }))
+}
 
+const result8 = getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
+
+// console.log(result8);
