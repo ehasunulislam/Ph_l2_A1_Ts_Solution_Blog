@@ -78,3 +78,72 @@ if (typeof data === "string") {
 > আগে টাইপ বড় ছিল → পরে condition দিয়ে ছোট/নির্দিষ্ট টাইপে নামানো হয়
 
 ---
+
+## Type Narrowing কীভাবে কাজ করে?
+
+### 1️⃣ typeof ব্যবহার করে
+```ts
+function print(value: unknown) {
+  if (typeof value === "string") {
+    console.log(value.toUpperCase());
+  }
+}
+```
+
+এখানে `unknown → string` এ narrow হয়েছে
+
+---
+
+### 2️⃣ instanceof ব্যবহার করে
+```ts
+class Dog {
+  bark() {
+    console.log("Woof!");
+  }
+}
+
+function check(animal: unknown) {
+  if (animal instanceof Dog) {
+    animal.bark();
+  }
+}
+```
+
+---
+
+### 3️⃣ in operator ব্যবহার করে
+```ts
+type User = { name: string };
+
+type Admin = { name: string; role: string };
+
+function show(user: User | Admin) {
+  if ("role" in user) {
+    console.log(user.role);
+  }
+}
+```
+
+---
+
+### 4️⃣ Equality check (===)
+```ts
+function example(x: string | number) {
+  if (x === "hello") {
+    console.log("String confirmed");
+  }
+}
+```
+
+---
+
+## `any` vs `unknown` — সহজ তুলনা
+
+| Feature | any | unknown |
+|--------|-----|---------|
+| Type checking | নেই | আছে |
+| Safety | unsafe | safe |
+| Runtime error risk | high | low |
+| Use case | avoid | recommended |
+
+---
